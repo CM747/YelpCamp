@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron pb-2">
+        <h1 >Here you find the Most Amazing Camping Sites</h1>
+        <p class="lead">Hand Picked from all over the World</p>
+        <p>
+            <a href="/campgrounds/new" class="btn btn-primary">Add Campground</a>
+        </p>
+    </header>
+
+    
+
+    <div class="row">
+        <% campgrounds.forEach(function(camp){ %>
+            <div class=" col-md-4 col-lg-3 col-sm-6 mb-4">
+                <div class="card" >
+                    <img src="<%= camp.image %>" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=camp.name%></h5>
+                        <a href="/campgrounds/<%=camp._id%>" class="btn btn-primary btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+</div>
+
+<% include ../partials/footer %>

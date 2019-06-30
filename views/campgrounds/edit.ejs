@@ -1,0 +1,33 @@
+<%include ../partials/header%>
+
+<div class="container">
+    <h1 class="display-4 text-center">Edit Campground</h1>
+
+    <div class="m-auto newCampForm">
+        <form action="/campgrounds/<%=campground._id%>/?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Camping Place</label>
+                <input type="text" class="form-control" name="campground[name]" placeholder="Name of Camping Site" required value="<%=campground.name%>">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Image</label>
+                <input type="text" class="form-control" name="campground[image]" placeholder="Image Link" required value="<%=campground.image%>">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Price per night (in Rs.)</label>
+                <input type="number" class="form-control" name="campground[price]" placeholder="Price in Rs." required value="<%=campground.price%>" min="0.01" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Description</label>
+                <textarea class="form-control" name="campground[description]" rows="5" placeholder="Provide a Description" required><%=campground.description%></textarea>
+            </div>
+            <div class="form-group text-right mt-2">
+                <button type="submit" class="btn btn-success btn-sm">Update</button>
+                <a href="/campgrounds/<%=campground._id%>/" class="btn btn-danger btn-sm">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<%include ../partials/footer%>

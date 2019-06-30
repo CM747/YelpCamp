@@ -1,0 +1,16 @@
+body{
+    padding-top: 80px;
+}
+.newCampForm{
+    width: 80%;
+}
+.form-group{
+    margin-bottom: 2px;
+}
+.comments{
+    margin-bottom: 15px
+}
+.btn.focus, .btn:focus {
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
