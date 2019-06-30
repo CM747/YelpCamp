@@ -13,9 +13,10 @@ var campgroundsRoute = require("./routes/campgrounds"),
     commentsRoute = require("./routes/comments"),
     authRoutes = require("./routes/auth");
     
+var url = process.env.MONGODB_URI || "mongodb://localhost:27017/yelp_campv3"
 
 // Mongoose Config
-mongoose.connect("mongodb+srv://chandan:98516181@cluster0-bcwul.mongodb.net/test?retryWrites=true&w=majority",
+mongoose.connect(url,
     {
         useNewUrlParser:true,
         useCreateIndex:true
