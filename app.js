@@ -15,7 +15,15 @@ var campgroundsRoute = require("./routes/campgrounds"),
     
 
 // Mongoose Config
-mongoose.connect("mongodb://localhost:27017/yelp_campv3",{useNewUrlParser:true});
+mongoose.connect("mongodb+srv://chandan:98516181@cluster0-bcwul.mongodb.net/test?retryWrites=true&w=majority",
+    {
+        useNewUrlParser:true,
+        useCreateIndex:true
+}).then(()=>{
+    console.log("Connected to MongoDB Atlas");
+}).catch(err => {
+    console.log("ERROR:", err.message);
+});
 
 // App Config
 app.set("view engine", "ejs");
