@@ -66,6 +66,8 @@ app.get("/", (req,res) =>{
 });
 
 
-app.listen(process.env.PORT, ()=>{
+var port = process.env.PORT || 3000
+
+app.listen(port, ()=>{
     console.log("YelpCamp Server has started");
 });
